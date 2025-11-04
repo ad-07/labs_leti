@@ -5,26 +5,29 @@
 
 int main()
 {
-  int s1, code, index_first = -1, index_last, id = 0;
-  int arr[100];
-  scanf("%d", &s1);
-  code = s1;
-  while (scanf("%d", &s1) == 1){
-    arr[id] = s1;
+  int arr_size = 100;
+  int num, code, id = 0;
+  int arr[arr_size];
+  scanf("%d", &num);
+  code = num;
+  while (scanf("%d", &num) == 1){
+    arr[id] = num;
     id++;
   }
+
+  int size = id; //количество элементов в массиве
   switch (code){
   case 0:
-    printf("%d\n", index_first_zero(id, arr));
+    printf("%d\n", index_first_zero(size, arr));
     break;
   case 1:
-    printf("%d\n", index_last_zero(id, arr));  
+    printf("%d\n", index_last_zero(size, arr));  
     break;
   case 2:
-    printf("%d\n", sum_between(id, arr));
+    printf("%d\n", sum_between(size, arr));
     break;  
   case 3:
-    printf("%d\n", sum_before_and_after(id, arr));
+    printf("%d\n", sum_before_and_after(size, arr));
     break;
   default:
     printf("Данные некорректны\n");

@@ -1,2 +1,2 @@
 
-int index_first_zero(int id, int arr[]);
+int index_first_zero(int size, int arr[]);
