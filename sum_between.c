@@ -5,8 +5,8 @@
 int sum_between(int size, int arr[]){
     int index_first = index_first_zero(size, arr);
     int index_last = index_last_zero(size, arr);
-    int summ;
-    for(int i=index_first+1; i<index_last; i++){
+    int summ=0;
+    for(int i=index_first+1; i<=index_last; i++){
         summ += abs(arr[i]);
     }
     return summ;
