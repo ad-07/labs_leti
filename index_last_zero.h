@@ -1,1 +1,0 @@
-int index_last_zero(int size, int arr[]);
