@@ -1,20 +1,22 @@
-all: menu.o index_first_zero.o index_last_zero.o sum_between.o sum_before_and_after.o
-	gcc menu.o index_first_zero.o index_last_zero.o sum_between.o sum_before_and_after.o -o menu
+# CC = gcc
+
+# SRC = cw.c functions.c sentence_io.c text_io.c
+# OBJ = $(SRC:.c=.o)
+
+all: cw.o functions.o sentence_io.o text_io.o
+	gcc cw.o functions.o sentence_io.o text_io.o -o cw
 	make clean
-main.o: menu.c index_first_zero.h index_last_zero.h sum_between.h sum_before_and_after.h
-	gcc -c menu.c
+cw.o: cw.c functions.h sentence_io.h text_io.h
+	gcc -c cw.c
 
-index_first_zero.o: index_first_zero.c index_first_zero.h
-	gcc -c index_first_zero.c
+functions.o: functions.c functions.h
+	gcc -c functions.c
 
-index_last_zero.o: index_last_zero.c index_last_zero.h
-	gcc -c index_last_zero.c
+sentence_io.o: sentence_io.c sentence_io.h
+	gcc -c sentence_io.c
 
-sum_between.o: sum_between.c sum_between.h
-	gcc -c sum_between.c
-
-sum_before_and_after.o: sum_before_and_after.c sum_before_and_after.h
-	gcc -c sum_before_and_after.c
+text_io.o: text_io.c text_io.h
+	gcc -c text_io.c
 
 clean:
 	rm *.o
